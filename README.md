@@ -1,6 +1,41 @@
 # StudentManagement(자바 프로젝트, DB와 연동)
+데이터베이스 작업
+create database PhoneBookDB;
+use phoneBookdb; 
+변수(테이블 생성)
+create table studentprojectTBL(
+    name varchar(10) not null,      // 이름
+    gender varchar(4) not null,     //성별
+    birthday varchar(10) not null,  //생일
+    id int not null,                //학번
+    korean int not null,            //국어점수
+    math int not null,              //수학점수
+    english int not null,           //영어점수
+    total int not null,             //총점
+    avr double not null,            //평균
+    grade char not null,            //등급
+    primary key(id)                  
+
+);
+insert into studentprojectdb.studentprojecttbl values('김준희','남자','1997-03-20',2022,100,100,100);    //삽입
+
+select * from studentprojectdb.studentprojecttbl where id like 2022;                                    //조회
+
+delete from studentprojectdb.studentprojecttbl where id like 1011;                                      //삭제
+
+update studentprojectdb.studentprojecttbl set korean=80, math=80, english=80 where id=1564;             //수정
+
+select * from studentprojectdb.studentprojecttbl order by total asc;                                    //오름차순(정렬)
+
+select * from studentprojectdb.studentprojecttbl order by total desc;                                   //내림차순
 
 
+자바 프로그램을 통해 데이터베이스를 연동하여 작업, 코드 레코드 불러오기, 삽입, 검색, 삭제, 수정, 정렬 등을 수행하도록 했다.
+
+StudentModel - 변수,생성자,getset설정, 오버라이딩(hash,equals,comparable)
+StudentMain - 실행
+DBUtility - 데이터 베이스 연동
+DBController - 데이터베이스와 이클립스가 연동하여 작동하도록 구성
 
 <실행결과>
 
